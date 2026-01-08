@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "elementals:adamantine_ingot"
+    },
+    "C": {
+      "item": "minecraft:crying_obsidian"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    }
+  },
+  "pattern": [
+    "OAO",
+    "ACA",
+    "OAO"
+  ],
+  "result": {
+    "count": 8,
+    "id": "elementals:bedrock_catalyst"
+  }
+}

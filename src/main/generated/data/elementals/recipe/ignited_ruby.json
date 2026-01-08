@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "R": {
+      "item": "elementals:ruby"
+    },
+    "S": {
+      "item": "elementals:star_fragment"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "RSR",
+    "RRR"
+  ],
+  "result": {
+    "count": 8,
+    "id": "elementals:ignited_ruby"
+  }
+}

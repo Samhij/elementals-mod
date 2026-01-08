@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "elementals:tidebound_relic"
+    },
+    {
+      "item": "elementals:tidebound_relic"
+    },
+    {
+      "item": "elementals:tidebound_relic"
+    },
+    {
+      "item": "elementals:tidebound_relic"
+    },
+    {
+      "item": "elementals:tidebound_relic"
+    },
+    {
+      "item": "elementals:tidebound_relic"
+    },
+    {
+      "item": "elementals:tidebound_relic"
+    },
+    {
+      "item": "elementals:tidebound_relic"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "elementals:water_shell"
+  }
+}

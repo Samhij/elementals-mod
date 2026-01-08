@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "elementals:aerolite_block"
+    },
+    "D": {
+      "item": "minecraft:dragon_breath"
+    },
+    "E": {
+      "item": "minecraft:dragon_head"
+    }
+  },
+  "pattern": [
+    "ADA",
+    "DED",
+    "ADA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "elementals:end_core"
+  }
+}

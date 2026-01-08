@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "elementals:star_fragment"
+    },
+    {
+      "item": "elementals:star_fragment"
+    },
+    {
+      "item": "elementals:star_fragment"
+    },
+    {
+      "item": "elementals:star_fragment"
+    },
+    {
+      "item": "elementals:star_fragment"
+    },
+    {
+      "item": "elementals:star_fragment"
+    },
+    {
+      "item": "elementals:star_fragment"
+    },
+    {
+      "item": "elementals:star_fragment"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "elementals:fire_star"
+  }
+}

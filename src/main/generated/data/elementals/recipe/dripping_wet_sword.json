@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "elementals:dripping_wet_sapphire"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " R ",
+    " R ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elementals:dripping_wet_sword"
+  }
+}

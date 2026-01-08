@@ -1,0 +1,34 @@
+{
+  "criteria": {
+    "ignited_ruby_hoe": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elementals:ignited_ruby_hoe"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "background": "minecraft:textures/gui/advancements/backgrounds/stone.png",
+    "description": {
+      "translate": "advancements.elementals.ignited_ruby_hoe.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "elementals:ignited_ruby_hoe"
+    },
+    "title": {
+      "translate": "advancements.elementals.ignited_ruby_hoe.title"
+    }
+  },
+  "requirements": [
+    [
+      "ignited_ruby_hoe"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

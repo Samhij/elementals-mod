@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "elementals:sapphire"
+    }
+  },
+  "pattern": [
+    "R R",
+    "R R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "elementals:sapphire_boots"
+  }
+}

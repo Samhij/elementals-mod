@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_ethereal_aerolite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "elementals:ethereal_aerolite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "elementals:ethereal_shovel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_ethereal_aerolite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "elementals:ethereal_shovel"
+    ]
+  }
+}

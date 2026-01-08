@@ -1,0 +1,29 @@
+/summon sheep
+/time set noon
+/weather rain
+/locate biome minecraft:plains
+/tp @s 9 78 210
+/weather clear
+/tp @s 9 78 210
+/weather rain
+/weather clear
+/give @p minecraft:golden_carrot 64
+/kill @e[type=ender_dragon]
+/locate biome minecraft:plains
+/tp @s -38 81 188
+/locate biome minecraft:plains
+/tp @s -32 70 190
+/gamerule doDaylightCycle false
+/time set noon
+/weather rain
+/weather clear
+/locate biome minecraft:ice_spikes
+/tp @s -2934 123 2964
+/locate biome ice
+/locate biome #c:is_cold/overworld
+/tp @s 5 84 23
+/locate biome minecraft:ice_spikes
+/locate biome minecraft:frozen_ocean
+/tp @s 1325 100 -991
+/setblock 512 32 1733
+/fill 512 32 1733 601 61 1832 air

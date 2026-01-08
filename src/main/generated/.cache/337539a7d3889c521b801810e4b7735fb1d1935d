@@ -1,0 +1,12 @@
+// 1.21.1	2026-01-08T17:38:38.250065255	Elementals Mod/Tags for minecraft:item
+0229b1e17b37e98da0d6d6bf2d4163ada76e26af data/minecraft/tags/item/head_armor.json
+db1e03703684ff6ecc870c39cf9dca92dce328d5 data/minecraft/tags/item/trimmable_armor.json
+ecb1f31a52303aa457b4d4a68c1fb37ce6295b1e data/minecraft/tags/item/leg_armor.json
+6a461ef0ca2af711bb936b74f06ecf1dcc2088f5 data/minecraft/tags/item/foot_armor.json
+058d1fd8d7436e7da2cc131e6203c10bd534acc1 data/minecraft/tags/item/shovels.json
+25f2d91763c14480c772a30eab3f1003b3c4d37a data/minecraft/tags/item/swords.json
+73ab8e2125346d7548edbe132b87d95a5efb9f8a data/minecraft/tags/item/axes.json
+9b8a1a1eb7c6a22dfe3fa68815eec0d90a73deba data/minecraft/tags/item/chest_armor.json
+53d5556a37abbeb9e62c6a555f2f4903eeeba15e data/minecraft/tags/item/hoes.json
+3b92ceaa2e2f88f26e996678134dbb4fdec215d9 data/minecraft/tags/item/beacon_payment_items.json
+13922b192eb5bbe270b48547ea1cfa63a574720e data/minecraft/tags/item/pickaxes.json

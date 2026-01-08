@@ -1,0 +1,136 @@
+{
+  "item.elementals.ruby": "Ruby",
+  "item.elementals.ignited_ruby": "Ignited Ruby",
+
+  "item.elementals.star_fragment": "Star Fragment",
+  "item.elementals.fire_star": "Fire Star",
+
+  "item.elementals.ruby_sword": "Ruby Sword",
+  "item.elementals.ruby_pickaxe": "Ruby Pickaxe",
+  "item.elementals.ruby_axe": "Ruby Axe",
+  "item.elementals.ruby_shovel": "Ruby Shovel",
+  "item.elementals.ruby_hoe": "Ruby Hoe",
+
+  "item.elementals.ignited_ruby_sword": "Ignited Ruby Sword",
+  "item.elementals.ignited_ruby_pickaxe": "Ignited Ruby Pickaxe",
+  "item.elementals.ignited_ruby_axe": "Ignited Ruby Axe",
+  "item.elementals.ignited_ruby_shovel": "Ignited Ruby Shovel",
+  "item.elementals.ignited_ruby_hoe": "Ignited Ruby Hoe",
+
+  "item.elementals.ruby_helmet": "Ruby Helmet",
+  "item.elementals.ruby_chestplate": "Ruby Chestplate",
+  "item.elementals.ruby_leggings": "Ruby Leggings",
+  "item.elementals.ruby_boots": "Ruby Boots",
+
+  "item.elementals.ignited_ruby_helmet": "Ignited Ruby Helmet",
+  "item.elementals.ignited_ruby_chestplate": "Ignited Ruby Chestplate",
+  "item.elementals.ignited_ruby_leggings": "Ignited Ruby Leggings",
+  "item.elementals.ignited_ruby_boots": "Ignited Ruby Boots",
+
+  "block.elementals.ruby_ore": "Ruby Ore",
+  "block.elementals.ruby_block": "Block of Ruby",
+
+  "item.elementals.sapphire": "Sapphire",
+  "item.elementals.dripping_wet_sapphire": "Drippin' Wet Sapphire",
+  "item.elementals.tidebound_relic": "Tidebound Relic",
+  "item.elementals.water_shell": "Water Shell",
+
+  "item.elementals.sapphire_sword": "Sapphire Sword",
+  "item.elementals.sapphire_pickaxe": "Sapphire Pickaxe",
+  "item.elementals.sapphire_axe": "Sapphire Axe",
+  "item.elementals.sapphire_shovel": "Sapphire Shovel",
+  "item.elementals.sapphire_hoe": "Sapphire Hoe",
+
+  "item.elementals.dripping_wet_sword": "Drippin' Wet Sword",
+  "item.elementals.dripping_wet_pickaxe": "Drippin' Wet Pickaxe",
+  "item.elementals.dripping_wet_axe": "Drippin' Wet Axe",
+  "item.elementals.dripping_wet_shovel": "Drippin' Wet Shovel",
+  "item.elementals.dripping_wet_hoe": "Drippin' Wet Hoe",
+
+  "item.elementals.sapphire_helmet": "Sapphire Helmet",
+  "item.elementals.sapphire_chestplate": "Sapphire Chestplate",
+  "item.elementals.sapphire_leggings": "Sapphire Leggings",
+  "item.elementals.sapphire_boots": "Sapphire Boots",
+
+  "item.elementals.dripping_wet_helmet": "Drippin' Wet Helmet",
+  "item.elementals.dripping_wet_chestplate": "Drippin' Wet Chestplate",
+  "item.elementals.dripping_wet_leggings": "Drippin' Wet Leggings",
+  "item.elementals.dripping_wet_boots": "Drippin' Wet Boots",
+
+  "block.elementals.sapphire_block": "Block of Sapphire",
+  "block.elementals.dripping_wet_block": "Drippin' Wet Block",
+  "block.elementals.sapphire_ore": "Sapphire Ore",
+
+  "item.elementals.adamant": "Adamant",
+  "item.elementals.adamantine_ingot": "Adamantine Ingot",
+  "item.elementals.fortified_adamantine_ingot": "Fortified Adamantine Ingot",
+  "item.elementals.bedrock_catalyst": "Bedrock Catalyst",
+  "item.elementals.bedrock_singularity": "Bedrock Singularity",
+
+  "item.elementals.adamantine_sword": "Adamantine Sword",
+  "item.elementals.adamantine_pickaxe": "Adamantine Pickaxe",
+  "item.elementals.adamantine_axe": "Adamantine Axe",
+  "item.elementals.adamantine_shovel": "Adamantine Shovel",
+  "item.elementals.adamantine_hoe": "Adamantine Hoe",
+
+  "item.elementals.adamantine_helmet": "Adamantine Helmet",
+  "item.elementals.adamantine_chestplate": "Adamantine Chestplate",
+  "item.elementals.adamantine_leggings": "Adamantine Leggings",
+  "item.elementals.adamantine_boots": "Adamantine Boots",
+
+  "item.elementals.fortified_adamantine_sword": "Fortified Adamantine Sword",
+  "item.elementals.fortified_adamantine_pickaxe": "Fortified Adamantine Pickaxe",
+  "item.elementals.fortified_adamantine_axe": "Fortified Adamantine Axe",
+  "item.elementals.fortified_adamantine_shovel": "Fortified Adamantine Shovel",
+  "item.elementals.fortified_adamantine_hoe": "Fortified Adamantine Hoe",
+
+  "item.elementals.fortified_adamantine_helmet": "Fortified Adamantine Helmet",
+  "item.elementals.fortified_adamantine_chestplate": "Fortified Adamantine Chestplate",
+  "item.elementals.fortified_adamantine_leggings": "Fortified Adamantine Leggings",
+  "item.elementals.fortified_adamantine_boots": "Fortified Adamantine Boots",
+
+  "block.elementals.adamant_ore": "Adamant Ore",
+  "block.elementals.adamantine_block": "Block of Adamantine",
+  "block.elementals.fortified_adamantine_block": "Block of Fortified Adamantine",
+  "block.elementals.bedrock_singularity": "Bedrock Singularity",
+
+  "item.elementals.aerolite": "Aerolite",
+  "item.elementals.ethereal_aerolite": "Ethereal Aerolite",
+  "item.elementals.end_core": "End Core",
+
+  "item.elementals.aerolite_sword": "Aerolite Sword",
+  "item.elementals.aerolite_pickaxe": "Aerolite Pickaxe",
+  "item.elementals.aerolite_axe": "Aerolite Axe",
+  "item.elementals.aerolite_shovel": "Aerolite Shovel",
+  "item.elementals.aerolite_hoe": "Aerolite Hoe",
+
+  "item.elementals.aerolite_helmet": "Aerolite Helmet",
+  "item.elementals.aerolite_chestplate": "Aerolite Chestplate",
+  "item.elementals.aerolite_leggings": "Aerolite Leggings",
+  "item.elementals.aerolite_boots": "Aerolite Boots",
+
+  "item.elementals.ethereal_sword": "Ethereal Sword",
+  "item.elementals.ethereal_pickaxe": "Ethereal Pickaxe",
+  "item.elementals.ethereal_axe": "Ethereal Axe",
+  "item.elementals.ethereal_shovel": "Ethereal Shovel",
+  "item.elementals.ethereal_hoe": "Ethereal Hoe",
+
+  "item.elementals.ethereal_helmet": "Ethereal Helmet",
+  "item.elementals.ethereal_chestplate": "Ethereal Chestplate",
+  "item.elementals.ethereal_leggings": "Ethereal Leggings",
+  "item.elementals.ethereal_boots": "Ethereal Boots",
+
+  "block.elementals.aerolite_ore": "Aerolite Ore",
+  "block.elementals.aerolite_block": "Block of Aerolite",
+
+  "creativetab.fire_items": "Elementals: Fire Items",
+  "creativetab.water_items": "Elementals: Water Items",
+  "creativetab.earth_items": "Elementals: Earth Items",
+  "creativetab.air_items": "Elementals: Air Items",
+
+  "advancements.elementals.ignited_ruby_hoe.title": "Why?",
+  "advancements.elementals.ignited_ruby_hoe.description": "Craft an Ignited Ruby Hoe, and rethink your life choices (again).",
+
+  "advancements.elementals.get_ignited_buffs.title": "On Fire",
+  "advancements.elementals.get_ignited_buffs.description": "Go to the Nether while having Ignited tools and armor, and get the Ignited Buffs."
+}

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "elementals:adamantine_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "elementals:adamantine_ingot"
+  }
+}

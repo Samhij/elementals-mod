@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "elementals:ethereal_aerolite"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "R R",
+    "R R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "elementals:ethereal_leggings"
+  }
+}

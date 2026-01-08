@@ -1,0 +1,5 @@
+// 1.21.1	2026-01-08T17:38:38.247904362	Elementals Mod/Tags for minecraft:block
+2d44c543b036ae0d3e8f96ec30b8c7d85e8881b4 data/minecraft/tags/block/beacon_base_blocks.json
+d63f33d76ab37637ada58c2e9bb2d45cb6ef1e6e data/minecraft/tags/block/needs_diamond_tool.json
+8f559aeb61a4c410797524596db3a4354316a67b data/minecraft/tags/block/needs_iron_tool.json
+c5c653fbeccb66fc953451f664f1b5154dfa11b8 data/minecraft/tags/block/mineable/pickaxe.json

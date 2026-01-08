@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "elementals:adamantine_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " R ",
+    " R ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elementals:adamantine_sword"
+  }
+}

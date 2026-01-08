@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "R": {
+      "item": "elementals:fortified_adamantine_ingot"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    " R ",
+    " S ",
+    " S "
+  ],
+  "result": {
+    "count": 1,
+    "id": "elementals:fortified_adamantine_shovel"
+  }
+}

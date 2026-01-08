@@ -1,0 +1,9 @@
+// 1.21.1	2026-01-08T17:38:38.250826583	Elementals Mod/World Gen
+453fe49b28d0b5f4936edc086ef67f329345ec40 data/elementals/worldgen/placed_feature/sapphire_ore_placed.json
+d93bc4e7f4db758d6caca10228a01d80b6450736 data/elementals/worldgen/placed_feature/adamant_ore_placed.json
+ced8c6394e0b5b698669bfb8001a0ca0ca4bbe89 data/elementals/worldgen/configured_feature/aerolite_ore.json
+dbffec74819f7838f1c294d072769c98fea847d3 data/elementals/worldgen/configured_feature/sapphire_ore.json
+d17a53a7e604959feaddf865fe2fd328f5c23594 data/elementals/worldgen/configured_feature/ruby_ore.json
+3bc20179ca369f39a8dfa386ddc4e129957aa3c9 data/elementals/worldgen/placed_feature/ruby_ore_placed.json
+ae474adb945a18a3983cfa5ae62a7ad6802cb674 data/elementals/worldgen/placed_feature/aerolite_ore_placed.json
+5549226d531dbe3d42a5c1d32307470ee00cd0c0 data/elementals/worldgen/configured_feature/adamant_ore.json
