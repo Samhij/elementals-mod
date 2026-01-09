@@ -62,7 +62,7 @@ jobs:
 
       - name: Delete existing Modrinth version
         run: |
-          PROJECT_ID="YOUR_MODRINTH_PROJECT_ID"
+          PROJECT_ID="hDY3U1Dg"
           VERSION="${{ steps.version.outputs.mod_version }}"
           
           # Get all versions from Modrinth
@@ -102,13 +102,19 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to Modrinth
-        uses: modrinth/minotaur@v2
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
-          api-token: ${{ secrets.MODRINTH_TOKEN }}
-          project-id: hDY3U1Dg
-          version-number: ${{ steps.version.outputs.mod_version }}
+          modrinth-id: hDY3U1Dg
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          files: build/libs/*[!-sources].jar
+
+          name: Release ${{ steps.version.outputs.tag_name }}
+          version: ${{ steps.version.outputs.mod_version }}
           version-type: release
-          upload-files: build/libs/*[!-sources].jar
-          game-versions: ${{ steps.version.outputs.minecraft_version }}
+
           loaders: fabric
-          dependencies: fabric-api
+          game-versions: ${{ steps.version.outputs.minecraft_version }}
+
+          dependencies: |
+            fabric-api | depends | *
