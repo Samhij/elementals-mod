@@ -56,7 +56,7 @@ public class ModEvents {
 
     private static void toggleFlight(PlayerEntity player) {
         // Don't toggle flight for creative mode players
-        if (player.isCreative()) {
+        if (player.isCreative() || player.isSpectator()) {
             return;
         }
 

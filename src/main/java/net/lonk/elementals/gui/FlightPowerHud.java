@@ -24,14 +24,14 @@ public class FlightPowerHud implements ClientModInitializer {
         }
 
         // Don't show HUD in creative mode
-        if (client.player.isCreative()) {
+        if (client.player.isCreative() || client.player.isSpectator()) {
             return;
         }
 
         int flightPower = ModEvents.getFlightPower();
         int maxFlightPower = ModEvents.getMaxFlightPower();
 
-        // Check if flight is currently active
+        // Check if player can fly
         boolean canFly = client.player.getAbilities().allowFlying;
 
         // Determine text color - only colorize when flying

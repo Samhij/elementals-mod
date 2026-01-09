@@ -27,3 +27,15 @@
 /tp @s 1325 100 -991
 /setblock 512 32 1733
 /fill 512 32 1733 601 61 1832 air
+/gamerule doDaylightCycle false
+/gamerule doWeatherCycle false
+/time set noon
+/setblock 11 -60 -14 minecraft:end_portal
+/kill @e[type=ender_dragon]
+/clear
+/locate biome minecraft:ice_spikes
+/tp @s -2086 63 1083
+/weather rain
+/weather clear
+/gamerule doMobSpawning false
+/kill @e[type=!player]
