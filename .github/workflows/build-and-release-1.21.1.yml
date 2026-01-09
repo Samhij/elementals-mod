@@ -3,7 +3,7 @@ name: Build and Release 1.21.1
 on:
   push:
     branches:
-      - master
+      - 1.21.1
 
 permissions:
   contents: write
