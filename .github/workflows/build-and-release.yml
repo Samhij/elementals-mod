@@ -59,7 +59,7 @@ jobs:
           git tag ${{ steps.version.outputs.tag_name }}
           git push origin ${{ steps.version.outputs.tag_name }}
       
-      - name: Create Release
+      - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.version.outputs.tag_name }}
@@ -70,3 +70,24 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Publish to Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: hDY3U1Dg
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          
+          files: build/libs/*[!-sources].jar
+          
+          name: Release ${{ steps.version.outputs.tag_name }}
+          version: ${{ steps.version.outputs.mod_version }}
+          version-type: release
+          
+          loaders: fabric
+          game-versions: |
+            1.21.1
+          
+          dependencies: |
+            fabric-api | depends | *
+          
+          changelog-file: CHANGELOG.md
