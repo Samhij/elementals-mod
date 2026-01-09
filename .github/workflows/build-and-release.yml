@@ -1,9 +1,9 @@
-name: Build and Release
+name: Build and Release 1.20.1
 
 on:
   push:
     branches:
-      - 1.21.1
+      - 1.20.1
 
 permissions:
   contents: write
@@ -11,7 +11,7 @@ permissions:
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -64,14 +64,14 @@ jobs:
         run: |
           PROJECT_ID="hDY3U1Dg"
           VERSION="${{ steps.version.outputs.mod_version }}"
-          
+
           # Get all versions from Modrinth
           VERSIONS=$(curl -s "https://api.modrinth.com/v2/project/$PROJECT_ID/version" \
             -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}")
-          
+
           # Find version ID matching our version number
           VERSION_ID=$(echo "$VERSIONS" | jq -r ".[] | select(.version_number == \"$VERSION\") | .id")
-          
+
           # Delete if exists
           if [ ! -z "$VERSION_ID" ]; then
             echo "Deleting existing Modrinth version $VERSION (ID: $VERSION_ID)"
