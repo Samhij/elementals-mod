@@ -64,21 +64,22 @@ jobs:
         run: |
           PROJECT_ID="hDY3U1Dg"
           VERSION="${{ steps.version.outputs.mod_version }}"
-          
+          MINECRAFT_VERSION="${{ steps.version.outputs.minecraft_version }}"
+
           # Get all versions from Modrinth
           VERSIONS=$(curl -s "https://api.modrinth.com/v2/project/$PROJECT_ID/version" \
             -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}")
-          
-          # Find version ID matching our version number
-          VERSION_ID=$(echo "$VERSIONS" | jq -r ".[] | select(.version_number == \"$VERSION\") | .id")
-          
+
+          # Find version ID matching both version number AND Minecraft version
+          VERSION_ID=$(echo "$VERSIONS" | jq -r ".[] | select(.version_number == \"$VERSION\" and (.game_versions | index(\"$MINECRAFT_VERSION\"))) | .id")
+
           # Delete if exists
           if [ ! -z "$VERSION_ID" ]; then
-            echo "Deleting existing Modrinth version $VERSION (ID: $VERSION_ID)"
+            echo "Deleting existing Modrinth version $VERSION for Minecraft $MINECRAFT_VERSION (ID: $VERSION_ID)"
             curl -X DELETE "https://api.modrinth.com/v2/version/$VERSION_ID" \
               -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}"
           else
-            echo "No existing Modrinth version found for $VERSION"
+            echo "No existing Modrinth version found for $VERSION with Minecraft $MINECRAFT_VERSION"
           fi
         continue-on-error: true
 
