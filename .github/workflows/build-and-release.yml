@@ -44,8 +44,15 @@ jobs:
             echo "exists=false" >> $GITHUB_OUTPUT
           fi
       
+      - name: Delete existing release and tag
+        if: steps.check_tag.outputs.exists == 'true'
+        run: |
+          gh release delete ${{ steps.version.outputs.tag_name }} --yes || true
+          git push --delete origin ${{ steps.version.outputs.tag_name }} || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
       - name: Create and push tag
-        if: steps.check_tag.outputs.exists == 'false'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -53,12 +60,12 @@ jobs:
           git push origin ${{ steps.version.outputs.tag_name }}
       
       - name: Create Release
-        if: steps.check_tag.outputs.exists == 'false'
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.version.outputs.tag_name }}
           name: Release ${{ steps.version.outputs.tag_name }}
-          files: build/libs/*.jar
+          files: |
+            build/libs/*[!-sources].jar
           draft: false
           prerelease: false
         env:
