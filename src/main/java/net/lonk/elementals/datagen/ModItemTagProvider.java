@@ -82,55 +82,46 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         //region Armor
 
-        getOrCreateTagBuilder(ItemTags.HEAD_ARMOR)
-                .add(ModItems.RUBY_HELMET)
-                .add(ModItems.IGNITED_RUBY_HELMET)
-                .add(ModItems.SAPPHIRE_HELMET)
-                .add(ModItems.DRIPPING_WET_HELMET)
-                .add(ModItems.ADAMANTINE_HELMET)
-                .add(ModItems.FORTIFIED_ADAMANTINE_HELMET)
-                .add(ModItems.AEROLITE_HELMET)
-                .add(ModItems.ETHEREAL_HELMET)
-        ;
-
-        getOrCreateTagBuilder(ItemTags.CHEST_ARMOR)
-                .add(ModItems.RUBY_CHESTPLATE)
-                .add(ModItems.IGNITED_RUBY_CHESTPLATE)
-                .add(ModItems.SAPPHIRE_CHESTPLATE)
-                .add(ModItems.DRIPPING_WET_CHESTPLATE)
-                .add(ModItems.ADAMANTINE_CHESTPLATE)
-                .add(ModItems.FORTIFIED_ADAMANTINE_CHESTPLATE)
-                .add(ModItems.AEROLITE_CHESTPLATE)
-                .add(ModItems.ETHEREAL_CHESTPLATE)
-        ;
-
-        getOrCreateTagBuilder(ItemTags.LEG_ARMOR)
-                .add(ModItems.RUBY_LEGGINGS)
-                .add(ModItems.IGNITED_RUBY_LEGGINGS)
-                .add(ModItems.SAPPHIRE_LEGGINGS)
-                .add(ModItems.DRIPPING_WET_LEGGINGS)
-                .add(ModItems.ADAMANTINE_LEGGINGS)
-                .add(ModItems.FORTIFIED_ADAMANTINE_LEGGINGS)
-                .add(ModItems.AEROLITE_LEGGINGS)
-                .add(ModItems.ETHEREAL_LEGGINGS)
-        ;
-
-        getOrCreateTagBuilder(ItemTags.FOOT_ARMOR)
-                .add(ModItems.RUBY_BOOTS)
-                .add(ModItems.IGNITED_RUBY_BOOTS)
-                .add(ModItems.SAPPHIRE_BOOTS)
-                .add(ModItems.DRIPPING_WET_BOOTS)
-                .add(ModItems.ADAMANTINE_BOOTS)
-                .add(ModItems.FORTIFIED_ADAMANTINE_BOOTS)
-                .add(ModItems.AEROLITE_BOOTS)
-                .add(ModItems.ETHEREAL_BOOTS)
-        ;
-
         getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .addTag(ItemTags.HEAD_ARMOR)
-                .addTag(ItemTags.CHEST_ARMOR)
-                .addTag(ItemTags.LEG_ARMOR)
-                .addTag(ItemTags.FOOT_ARMOR)
+                .add(ModItems.RUBY_HELMET)
+                .add(ModItems.RUBY_CHESTPLATE)
+                .add(ModItems.RUBY_LEGGINGS)
+                .add(ModItems.RUBY_BOOTS)
+
+                .add(ModItems.IGNITED_RUBY_HELMET)
+                .add(ModItems.IGNITED_RUBY_CHESTPLATE)
+                .add(ModItems.IGNITED_RUBY_LEGGINGS)
+                .add(ModItems.IGNITED_RUBY_BOOTS)
+
+                .add(ModItems.SAPPHIRE_HELMET)
+                .add(ModItems.SAPPHIRE_CHESTPLATE)
+                .add(ModItems.SAPPHIRE_LEGGINGS)
+                .add(ModItems.SAPPHIRE_BOOTS)
+
+                .add(ModItems.DRIPPING_WET_HELMET)
+                .add(ModItems.DRIPPING_WET_CHESTPLATE)
+                .add(ModItems.DRIPPING_WET_LEGGINGS)
+                .add(ModItems.DRIPPING_WET_BOOTS)
+
+                .add(ModItems.ADAMANTINE_HELMET)
+                .add(ModItems.ADAMANTINE_CHESTPLATE)
+                .add(ModItems.ADAMANTINE_LEGGINGS)
+                .add(ModItems.ADAMANTINE_BOOTS)
+
+                .add(ModItems.FORTIFIED_ADAMANTINE_HELMET)
+                .add(ModItems.FORTIFIED_ADAMANTINE_CHESTPLATE)
+                .add(ModItems.FORTIFIED_ADAMANTINE_LEGGINGS)
+                .add(ModItems.FORTIFIED_ADAMANTINE_BOOTS)
+
+                .add(ModItems.AEROLITE_HELMET)
+                .add(ModItems.AEROLITE_CHESTPLATE)
+                .add(ModItems.AEROLITE_LEGGINGS)
+                .add(ModItems.AEROLITE_BOOTS)
+
+                .add(ModItems.ETHEREAL_HELMET)
+                .add(ModItems.ETHEREAL_CHESTPLATE)
+                .add(ModItems.ETHEREAL_LEGGINGS)
+                .add(ModItems.ETHEREAL_BOOTS)
         ;
 
         //endregion

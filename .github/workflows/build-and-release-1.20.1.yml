@@ -1,0 +1,120 @@
+name: Build and Release 1.20.1
+
+on:
+  push:
+    branches:
+      - 1.20.1
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: 'gradle'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: false
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build --no-daemon --parallel
+
+      - name: Read mod version
+        id: version
+        run: |
+          VERSION=$(grep '^mod_version' gradle.properties | cut -d'=' -f2 | tr -d ' ')
+          MINECRAFT_VERSION=$(grep '^minecraft_version' gradle.properties | cut -d'=' -f2 | tr -d ' ')
+          echo "mod_version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag_name=v$VERSION" >> $GITHUB_OUTPUT
+          echo "minecraft_version=$MINECRAFT_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Check if tag exists
+        id: check_tag
+        run: |
+          if git ls-remote --tags origin | grep -q "refs/tags/v${{ steps.version.outputs.mod_version }}"; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Delete existing release and tag
+        if: steps.check_tag.outputs.exists == 'true'
+        run: |
+          gh release delete ${{ steps.version.outputs.tag_name }} --yes || true
+          git push --delete origin ${{ steps.version.outputs.tag_name }} || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Delete existing Modrinth version
+        run: |
+          PROJECT_ID="hDY3U1Dg"
+          VERSION="${{ steps.version.outputs.mod_version }}"
+
+          # Get all versions from Modrinth
+          VERSIONS=$(curl -s "https://api.modrinth.com/v2/project/$PROJECT_ID/version" \
+            -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}")
+
+          # Find version ID matching our version number
+          VERSION_ID=$(echo "$VERSIONS" | jq -r ".[] | select(.version_number == \"$VERSION\") | .id")
+
+          # Delete if exists
+          if [ ! -z "$VERSION_ID" ]; then
+            echo "Deleting existing Modrinth version $VERSION (ID: $VERSION_ID)"
+            curl -X DELETE "https://api.modrinth.com/v2/version/$VERSION_ID" \
+              -H "Authorization: ${{ secrets.MODRINTH_TOKEN }}"
+          else
+            echo "No existing Modrinth version found for $VERSION"
+          fi
+        continue-on-error: true
+
+      - name: Create and push tag
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag ${{ steps.version.outputs.tag_name }}
+          git push origin ${{ steps.version.outputs.tag_name }}
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.tag_name }}
+          name: Release ${{ steps.version.outputs.tag_name }}
+          files: |
+            build/libs/*[!-sources].jar
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to Modrinth
+        uses: Kir-Antipov/mc-publish@v3.3
+        with:
+          modrinth-id: hDY3U1Dg
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+
+          files: build/libs/*[!-sources].jar
+
+          name: Release ${{ steps.version.outputs.tag_name }}
+          version: ${{ steps.version.outputs.mod_version }}
+          version-type: release
+
+          loaders: fabric
+          game-versions: ${{ steps.version.outputs.minecraft_version }}
+
+          dependencies: |
+            fabric-api | depends | *

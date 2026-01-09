@@ -1,7 +1,6 @@
 package net.lonk.elementals.item;
 
 import net.lonk.elementals.ElementalsMod;
-import net.minecraft.component.DataComponentTypes;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.HoeItem;
@@ -21,91 +20,83 @@ public class ModItems {
             new Item(new Item.Settings()));
 
     public static final Item IGNITED_RUBY = registerItem("ignited_ruby",
-            new Item(new Item.Settings().fireproof().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true)));
+            new Item(new Item.Settings().fireproof()));
 
     public static final Item STAR_FRAGMENT = registerItem("star_fragment",
-            new Item(new Item.Settings().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true)));
+            new Item(new Item.Settings()));
 
     public static final Item FIRE_STAR = registerItem("fire_star",
-            new Item(new Item.Settings().fireproof().component(DataComponentTypes.ENCHANTMENT_GLINT_OVERRIDE, true)));
+            new Item(new Item.Settings().fireproof()));
 
     //endregion
 
     //region Ruby Tools
 
     public static final Item RUBY_SWORD = registerItem("ruby_sword",
-            new SwordItem(ModToolMaterials.RUBY, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.RUBY, 3, -2.4f))));
+            new SwordItem(ModToolMaterials.RUBY, 3, -2.4f, new Item.Settings()));
 
     public static final Item RUBY_PICKAXE = registerItem("ruby_pickaxe",
-            new PickaxeItem(ModToolMaterials.RUBY, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.RUBY, 1.0f, -2.8f))));
+            new PickaxeItem(ModToolMaterials.RUBY, 1, -2.8f, new Item.Settings()));
 
     public static final Item RUBY_SHOVEL = registerItem("ruby_shovel",
-            new ShovelItem(ModToolMaterials.RUBY, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.RUBY, 1.5f, -3.0f))));
+            new ShovelItem(ModToolMaterials.RUBY, 1.5f, -3.0f, new Item.Settings()));
 
     public static final Item RUBY_AXE = registerItem("ruby_axe",
-            new AxeItem(ModToolMaterials.RUBY, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.RUBY, 6.0f, -3.2f))));
+            new AxeItem(ModToolMaterials.RUBY, 6.0f, -3.2f, new Item.Settings()));
 
     public static final Item RUBY_HOE = registerItem("ruby_hoe",
-            new HoeItem(ModToolMaterials.RUBY, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.RUBY, 0.0f, -3.0f))));
+            new HoeItem(ModToolMaterials.RUBY, 0, -3.0f, new Item.Settings()));
 
     //endregion
 
     //region Ruby Armor
 
     public static final Item RUBY_HELMET = registerItem("ruby_helmet",
-            new ArmorItem(ModArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.HELMET, new Item.Settings()));
 
     public static final Item RUBY_CHESTPLATE = registerItem("ruby_chestplate",
-            new ArmorItem(ModArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
 
     public static final Item RUBY_LEGGINGS = registerItem("ruby_leggings",
-            new ArmorItem(ModArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.LEGGINGS, new Item.Settings()));
 
     public static final Item RUBY_BOOTS = registerItem("ruby_boots",
-            new ArmorItem(ModArmorMaterials.RUBY_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.RUBY, ArmorItem.Type.BOOTS, new Item.Settings()));
 
     //endregion
 
     //region Ignited Ruby Tools
 
     public static final Item IGNITED_RUBY_SWORD = registerItem("ignited_ruby_sword",
-            new SwordItem(ModToolMaterials.RUBY, new Item.Settings().fireproof().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.IGNITED_RUBY, 3, -2.4f))));
+            new SwordItem(ModToolMaterials.IGNITED_RUBY, 3, -2.4f, new Item.Settings().fireproof()));
 
     public static final Item IGNITED_RUBY_PICKAXE = registerItem("ignited_ruby_pickaxe",
-            new PickaxeItem(ModToolMaterials.RUBY, new Item.Settings().fireproof().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.IGNITED_RUBY, 1.0f, -2.8f))));
+            new PickaxeItem(ModToolMaterials.IGNITED_RUBY, 1, -2.8f, new Item.Settings().fireproof()));
 
     public static final Item IGNITED_RUBY_SHOVEL = registerItem("ignited_ruby_shovel",
-            new ShovelItem(ModToolMaterials.RUBY, new Item.Settings().fireproof().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.IGNITED_RUBY, 1.5f, -3.0f))));
+            new ShovelItem(ModToolMaterials.IGNITED_RUBY, 1.5f, -3.0f, new Item.Settings().fireproof()));
 
     public static final Item IGNITED_RUBY_AXE = registerItem("ignited_ruby_axe",
-            new AxeItem(ModToolMaterials.RUBY, new Item.Settings().fireproof().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.IGNITED_RUBY, 6.0f, -3.2f))));
+            new AxeItem(ModToolMaterials.IGNITED_RUBY, 6.0f, -3.2f, new Item.Settings().fireproof()));
 
     public static final Item IGNITED_RUBY_HOE = registerItem("ignited_ruby_hoe",
-            new HoeItem(ModToolMaterials.RUBY, new Item.Settings().fireproof().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.IGNITED_RUBY, 0.0f, -3.0f))));
+            new HoeItem(ModToolMaterials.IGNITED_RUBY, 0, -3.0f, new Item.Settings().fireproof()));
 
     //endregion
 
     //region Ignited Ruby Armor
 
     public static final Item IGNITED_RUBY_HELMET = registerItem("ignited_ruby_helmet",
-            new ArmorItem(ModArmorMaterials.IGNITED_RUBY_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(33))));
+            new ArmorItem(ModArmorMaterials.IGNITED_RUBY, ArmorItem.Type.HELMET, new Item.Settings().fireproof()));
 
     public static final Item IGNITED_RUBY_CHESTPLATE = registerItem("ignited_ruby_chestplate",
-            new ArmorItem(ModArmorMaterials.IGNITED_RUBY_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(33))));
+            new ArmorItem(ModArmorMaterials.IGNITED_RUBY, ArmorItem.Type.CHESTPLATE, new Item.Settings().fireproof()));
 
     public static final Item IGNITED_RUBY_LEGGINGS = registerItem("ignited_ruby_leggings",
-            new ArmorItem(ModArmorMaterials.IGNITED_RUBY_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(33))));
+            new ArmorItem(ModArmorMaterials.IGNITED_RUBY, ArmorItem.Type.LEGGINGS, new Item.Settings().fireproof()));
 
     public static final Item IGNITED_RUBY_BOOTS = registerItem("ignited_ruby_boots",
-            new ArmorItem(ModArmorMaterials.IGNITED_RUBY_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(33))));
+            new ArmorItem(ModArmorMaterials.IGNITED_RUBY, ArmorItem.Type.BOOTS, new Item.Settings().fireproof()));
 
     //endregion
 
@@ -129,78 +120,70 @@ public class ModItems {
     //region Sapphire Tools
 
     public static final Item SAPPHIRE_SWORD = registerItem("sapphire_sword",
-            new SwordItem(ModToolMaterials.SAPPHIRE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, 3, -2.4f))));
+            new SwordItem(ModToolMaterials.SAPPHIRE, 3, -2.4f, new Item.Settings()));
 
     public static final Item SAPPHIRE_PICKAXE = registerItem("sapphire_pickaxe",
-            new PickaxeItem(ModToolMaterials.SAPPHIRE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, 1.0f, -2.8f))));
+            new PickaxeItem(ModToolMaterials.SAPPHIRE, 1, -2.8f, new Item.Settings()));
 
     public static final Item SAPPHIRE_SHOVEL = registerItem("sapphire_shovel",
-            new ShovelItem(ModToolMaterials.SAPPHIRE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, 1.5f, -3.0f))));
+            new ShovelItem(ModToolMaterials.SAPPHIRE, 1.5f, -3.0f, new Item.Settings()));
 
     public static final Item SAPPHIRE_AXE = registerItem("sapphire_axe",
-            new AxeItem(ModToolMaterials.SAPPHIRE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, 6.0f, -3.2f))));
+            new AxeItem(ModToolMaterials.SAPPHIRE, 6.0f, -3.2f, new Item.Settings()));
 
     public static final Item SAPPHIRE_HOE = registerItem("sapphire_hoe",
-            new HoeItem(ModToolMaterials.SAPPHIRE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.SAPPHIRE, 0.0f, -3.0f))));
+            new HoeItem(ModToolMaterials.SAPPHIRE, 0, -3.0f, new Item.Settings()));
 
     //endregion
 
     //region Sapphire Armor
 
     public static final Item SAPPHIRE_HELMET = registerItem("sapphire_helmet",
-            new ArmorItem(ModArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.HELMET, new Item.Settings()));
 
     public static final Item SAPPHIRE_CHESTPLATE = registerItem("sapphire_chestplate",
-            new ArmorItem(ModArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
 
     public static final Item SAPPHIRE_LEGGINGS = registerItem("sapphire_leggings",
-            new ArmorItem(ModArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.LEGGINGS, new Item.Settings()));
 
     public static final Item SAPPHIRE_BOOTS = registerItem("sapphire_boots",
-            new ArmorItem(ModArmorMaterials.SAPPHIRE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.SAPPHIRE, ArmorItem.Type.BOOTS, new Item.Settings()));
 
     //endregion
 
     //region Drippin' Wet Tools
 
     public static final Item DRIPPING_WET_SWORD = registerItem("dripping_wet_sword",
-            new SwordItem(ModToolMaterials.DRIPPING_WET, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.DRIPPING_WET, 3, -2.4f))));
+            new SwordItem(ModToolMaterials.DRIPPING_WET, 3, -2.4f, new Item.Settings()));
 
     public static final Item DRIPPING_WET_PICKAXE = registerItem("dripping_wet_pickaxe",
-            new PickaxeItem(ModToolMaterials.DRIPPING_WET, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.DRIPPING_WET, 1.0f, -2.8f))));
+            new PickaxeItem(ModToolMaterials.DRIPPING_WET, 1, -2.8f, new Item.Settings()));
 
     public static final Item DRIPPING_WET_SHOVEL = registerItem("dripping_wet_shovel",
-            new ShovelItem(ModToolMaterials.DRIPPING_WET, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.DRIPPING_WET, 1.5f, -3.0f))));
+            new ShovelItem(ModToolMaterials.DRIPPING_WET, 1.5f, -3.0f, new Item.Settings()));
 
     public static final Item DRIPPING_WET_AXE = registerItem("dripping_wet_axe",
-            new AxeItem(ModToolMaterials.DRIPPING_WET, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.DRIPPING_WET, 6.0f, -3.2f))));
+            new AxeItem(ModToolMaterials.DRIPPING_WET, 6.0f, -3.2f, new Item.Settings()));
 
     public static final Item DRIPPING_WET_HOE = registerItem("dripping_wet_hoe",
-            new HoeItem(ModToolMaterials.DRIPPING_WET, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.DRIPPING_WET, 0.0f, -3.0f))));
+            new HoeItem(ModToolMaterials.DRIPPING_WET, 0, -3.0f, new Item.Settings()));
 
     //endregion
 
     //region Drippin' Wet Armor
 
     public static final Item DRIPPING_WET_HELMET = registerItem("dripping_wet_helmet",
-            new ArmorItem(ModArmorMaterials.DRIPPING_WET_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25))));
+            new ArmorItem(ModArmorMaterials.DRIPPING_WET, ArmorItem.Type.HELMET, new Item.Settings()));
 
     public static final Item DRIPPING_WET_CHESTPLATE = registerItem("dripping_wet_chestplate",
-            new ArmorItem(ModArmorMaterials.DRIPPING_WET_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))));
+            new ArmorItem(ModArmorMaterials.DRIPPING_WET, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
 
     public static final Item DRIPPING_WET_LEGGINGS = registerItem("dripping_wet_leggings",
-            new ArmorItem(ModArmorMaterials.DRIPPING_WET_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25))));
+            new ArmorItem(ModArmorMaterials.DRIPPING_WET, ArmorItem.Type.LEGGINGS, new Item.Settings()));
 
     public static final Item DRIPPING_WET_BOOTS = registerItem("dripping_wet_boots",
-            new ArmorItem(ModArmorMaterials.DRIPPING_WET_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))));
+            new ArmorItem(ModArmorMaterials.DRIPPING_WET, ArmorItem.Type.BOOTS, new Item.Settings()));
 
     //endregion
 
@@ -224,78 +207,70 @@ public class ModItems {
     //region Adamantine Tools
 
     public static final Item ADAMANTINE_SWORD = registerItem("adamantine_sword",
-            new SwordItem(ModToolMaterials.ADAMANTINE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ADAMANTINE, 3, -2.4f))));
+            new SwordItem(ModToolMaterials.ADAMANTINE, 3, -2.4f, new Item.Settings()));
 
     public static final Item ADAMANTINE_PICKAXE = registerItem("adamantine_pickaxe",
-            new PickaxeItem(ModToolMaterials.ADAMANTINE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.ADAMANTINE, 1.0f, -2.8f))));
+            new PickaxeItem(ModToolMaterials.ADAMANTINE, 1, -2.8f, new Item.Settings()));
 
     public static final Item ADAMANTINE_SHOVEL = registerItem("adamantine_shovel",
-            new ShovelItem(ModToolMaterials.ADAMANTINE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.ADAMANTINE, 1.5f, -3.0f))));
+            new ShovelItem(ModToolMaterials.ADAMANTINE, 1.5f, -3.0f, new Item.Settings()));
 
     public static final Item ADAMANTINE_AXE = registerItem("adamantine_axe",
-            new AxeItem(ModToolMaterials.ADAMANTINE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.ADAMANTINE, 6.0f, -3.2f))));
+            new AxeItem(ModToolMaterials.ADAMANTINE, 6.0f, -3.2f, new Item.Settings()));
 
     public static final Item ADAMANTINE_HOE = registerItem("adamantine_hoe",
-            new HoeItem(ModToolMaterials.ADAMANTINE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.ADAMANTINE, 0.0f, -3.0f))));
+            new HoeItem(ModToolMaterials.ADAMANTINE, 0, -3.0f, new Item.Settings()));
 
     //endregion
 
     //region Adamantine Armor
 
     public static final Item ADAMANTINE_HELMET = registerItem("adamantine_helmet",
-            new ArmorItem(ModArmorMaterials.ADAMANTINE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.ADAMANTINE, ArmorItem.Type.HELMET, new Item.Settings()));
 
     public static final Item ADAMANTINE_CHESTPLATE = registerItem("adamantine_chestplate",
-            new ArmorItem(ModArmorMaterials.ADAMANTINE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.ADAMANTINE, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
 
     public static final Item ADAMANTINE_LEGGINGS = registerItem("adamantine_leggings",
-            new ArmorItem(ModArmorMaterials.ADAMANTINE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.ADAMANTINE, ArmorItem.Type.LEGGINGS, new Item.Settings()));
 
     public static final Item ADAMANTINE_BOOTS = registerItem("adamantine_boots",
-            new ArmorItem(ModArmorMaterials.ADAMANTINE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(16))));
+            new ArmorItem(ModArmorMaterials.ADAMANTINE, ArmorItem.Type.BOOTS, new Item.Settings()));
 
     //endregion
 
     //region Fortified Adamantine Tools
 
     public static final Item FORTIFIED_ADAMANTINE_SWORD = registerItem("fortified_adamantine_sword",
-            new SwordItem(ModToolMaterials.FORTIFIED_ADAMANTINE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.FORTIFIED_ADAMANTINE, 3, -2.4f))));
+            new SwordItem(ModToolMaterials.FORTIFIED_ADAMANTINE, 3, -2.4f, new Item.Settings()));
 
     public static final Item FORTIFIED_ADAMANTINE_PICKAXE = registerItem("fortified_adamantine_pickaxe",
-            new PickaxeItem(ModToolMaterials.FORTIFIED_ADAMANTINE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.FORTIFIED_ADAMANTINE, 1.0f, -2.8f))));
+            new PickaxeItem(ModToolMaterials.FORTIFIED_ADAMANTINE, 1, -2.8f, new Item.Settings()));
 
     public static final Item FORTIFIED_ADAMANTINE_SHOVEL = registerItem("fortified_adamantine_shovel",
-            new ShovelItem(ModToolMaterials.FORTIFIED_ADAMANTINE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.FORTIFIED_ADAMANTINE, 1.5f, -3.0f))));
+            new ShovelItem(ModToolMaterials.FORTIFIED_ADAMANTINE, 1.5f, -3.0f, new Item.Settings()));
 
     public static final Item FORTIFIED_ADAMANTINE_AXE = registerItem("fortified_adamantine_axe",
-            new AxeItem(ModToolMaterials.FORTIFIED_ADAMANTINE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.FORTIFIED_ADAMANTINE, 6.0f, -3.2f))));
+            new AxeItem(ModToolMaterials.FORTIFIED_ADAMANTINE, 6.0f, -3.2f, new Item.Settings()));
 
     public static final Item FORTIFIED_ADAMANTINE_HOE = registerItem("fortified_adamantine_hoe",
-            new HoeItem(ModToolMaterials.FORTIFIED_ADAMANTINE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.FORTIFIED_ADAMANTINE, 0.0f, -3.0f))));
+            new HoeItem(ModToolMaterials.FORTIFIED_ADAMANTINE, 0, -3.0f, new Item.Settings()));
 
     //endregion
 
     //region Fortified Adamantine Armor
 
     public static final Item FORTIFIED_ADAMANTINE_HELMET = registerItem("fortified_adamantine_helmet",
-            new ArmorItem(ModArmorMaterials.FORTIFIED_ADAMANTINE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(25))));
+            new ArmorItem(ModArmorMaterials.FORTIFIED_ADAMANTINE, ArmorItem.Type.HELMET, new Item.Settings()));
 
     public static final Item FORTIFIED_ADAMANTINE_CHESTPLATE = registerItem("fortified_adamantine_chestplate",
-            new ArmorItem(ModArmorMaterials.FORTIFIED_ADAMANTINE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(25))));
+            new ArmorItem(ModArmorMaterials.FORTIFIED_ADAMANTINE, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
 
     public static final Item FORTIFIED_ADAMANTINE_LEGGINGS = registerItem("fortified_adamantine_leggings",
-            new ArmorItem(ModArmorMaterials.FORTIFIED_ADAMANTINE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(25))));
+            new ArmorItem(ModArmorMaterials.FORTIFIED_ADAMANTINE, ArmorItem.Type.LEGGINGS, new Item.Settings()));
 
     public static final Item FORTIFIED_ADAMANTINE_BOOTS = registerItem("fortified_adamantine_boots",
-            new ArmorItem(ModArmorMaterials.FORTIFIED_ADAMANTINE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(25))));
+            new ArmorItem(ModArmorMaterials.FORTIFIED_ADAMANTINE, ArmorItem.Type.BOOTS, new Item.Settings()));
 
     //endregion
 
@@ -316,78 +291,70 @@ public class ModItems {
     //region Aerolite Tools
 
     public static final Item AEROLITE_SWORD = registerItem("aerolite_sword",
-            new SwordItem(ModToolMaterials.AEROLITE, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.AEROLITE, 3, -2.4f))));
+            new SwordItem(ModToolMaterials.AEROLITE, 3, -2.4f, new Item.Settings()));
 
     public static final Item AEROLITE_PICKAXE = registerItem("aerolite_pickaxe",
-            new PickaxeItem(ModToolMaterials.AEROLITE, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.AEROLITE, 1.0f, -2.8f))));
+            new PickaxeItem(ModToolMaterials.AEROLITE, 1, -2.8f, new Item.Settings()));
 
     public static final Item AEROLITE_SHOVEL = registerItem("aerolite_shovel",
-            new ShovelItem(ModToolMaterials.AEROLITE, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.AEROLITE, 1.5f, -3.0f))));
+            new ShovelItem(ModToolMaterials.AEROLITE, 1.5f, -3.0f, new Item.Settings()));
 
     public static final Item AEROLITE_AXE = registerItem("aerolite_axe",
-            new AxeItem(ModToolMaterials.AEROLITE, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.AEROLITE, 6.0f, -3.2f))));
+            new AxeItem(ModToolMaterials.AEROLITE, 6.0f, -3.2f, new Item.Settings()));
 
     public static final Item AEROLITE_HOE = registerItem("aerolite_hoe",
-            new HoeItem(ModToolMaterials.AEROLITE, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.AEROLITE, 0.0f, -3.0f))));
+            new HoeItem(ModToolMaterials.AEROLITE, 0, -3.0f, new Item.Settings()));
 
     //endregion
 
     //region Aerolite Armor
 
     public static final Item AEROLITE_HELMET = registerItem("aerolite_helmet",
-            new ArmorItem(ModArmorMaterials.AEROLITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(33))));
+            new ArmorItem(ModArmorMaterials.AEROLITE, ArmorItem.Type.HELMET, new Item.Settings()));
 
     public static final Item AEROLITE_CHESTPLATE = registerItem("aerolite_chestplate",
-            new ArmorItem(ModArmorMaterials.AEROLITE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(33))));
+            new ArmorItem(ModArmorMaterials.AEROLITE, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
 
     public static final Item AEROLITE_LEGGINGS = registerItem("aerolite_leggings",
-            new ArmorItem(ModArmorMaterials.AEROLITE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(33))));
+            new ArmorItem(ModArmorMaterials.AEROLITE, ArmorItem.Type.LEGGINGS, new Item.Settings()));
 
     public static final Item AEROLITE_BOOTS = registerItem("aerolite_boots",
-            new ArmorItem(ModArmorMaterials.AEROLITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(33))));
+            new ArmorItem(ModArmorMaterials.AEROLITE, ArmorItem.Type.BOOTS, new Item.Settings()));
 
     //endregion
 
     //region Ethereal Tools
 
     public static final Item ETHEREAL_SWORD = registerItem("ethereal_sword",
-            new SwordItem(ModToolMaterials.ETHEREAL, new Item.Settings().attributeModifiers(SwordItem.createAttributeModifiers(ModToolMaterials.ETHEREAL, 3, -2.4f))));
+            new SwordItem(ModToolMaterials.ETHEREAL, 3, -2.4f, new Item.Settings()));
 
     public static final Item ETHEREAL_PICKAXE = registerItem("ethereal_pickaxe",
-            new PickaxeItem(ModToolMaterials.ETHEREAL, new Item.Settings().attributeModifiers(PickaxeItem.createAttributeModifiers(ModToolMaterials.ETHEREAL, 1.0f, -2.8f))));
+            new PickaxeItem(ModToolMaterials.ETHEREAL, 1, -2.8f, new Item.Settings()));
 
     public static final Item ETHEREAL_SHOVEL = registerItem("ethereal_shovel",
-            new ShovelItem(ModToolMaterials.ETHEREAL, new Item.Settings().attributeModifiers(ShovelItem.createAttributeModifiers(ModToolMaterials.ETHEREAL, 1.5f, -3.0f))));
+            new ShovelItem(ModToolMaterials.ETHEREAL, 1.5f, -3.0f, new Item.Settings()));
 
     public static final Item ETHEREAL_AXE = registerItem("ethereal_axe",
-            new AxeItem(ModToolMaterials.ETHEREAL, new Item.Settings().attributeModifiers(AxeItem.createAttributeModifiers(ModToolMaterials.ETHEREAL, 6.0f, -3.2f))));
+            new AxeItem(ModToolMaterials.ETHEREAL, 6.0f, -3.2f, new Item.Settings()));
 
     public static final Item ETHEREAL_HOE = registerItem("ethereal_hoe",
-            new HoeItem(ModToolMaterials.ETHEREAL, new Item.Settings().attributeModifiers(HoeItem.createAttributeModifiers(ModToolMaterials.ETHEREAL, 0.0f, -3.0f))));
+            new HoeItem(ModToolMaterials.ETHEREAL, 0, -3.0f, new Item.Settings()));
 
     //endregion
 
     //region Ethereal Armor
 
     public static final Item ETHEREAL_HELMET = registerItem("ethereal_helmet",
-            new ArmorItem(ModArmorMaterials.ETHEREAL_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
-                    new Item.Settings().maxDamage(ArmorItem.Type.HELMET.getMaxDamage(40))));
+            new ArmorItem(ModArmorMaterials.ETHEREAL, ArmorItem.Type.HELMET, new Item.Settings()));
 
     public static final Item ETHEREAL_CHESTPLATE = registerItem("ethereal_chestplate",
-            new ArmorItem(ModArmorMaterials.ETHEREAL_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
-                    new Item.Settings().maxDamage(ArmorItem.Type.CHESTPLATE.getMaxDamage(40))));
+            new ArmorItem(ModArmorMaterials.ETHEREAL, ArmorItem.Type.CHESTPLATE, new Item.Settings()));
 
     public static final Item ETHEREAL_LEGGINGS = registerItem("ethereal_leggings",
-            new ArmorItem(ModArmorMaterials.ETHEREAL_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.LEGGINGS.getMaxDamage(40))));
+            new ArmorItem(ModArmorMaterials.ETHEREAL, ArmorItem.Type.LEGGINGS, new Item.Settings()));
 
     public static final Item ETHEREAL_BOOTS = registerItem("ethereal_boots",
-            new ArmorItem(ModArmorMaterials.ETHEREAL_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
-                    new Item.Settings().maxDamage(ArmorItem.Type.BOOTS.getMaxDamage(40))));
+            new ArmorItem(ModArmorMaterials.ETHEREAL, ArmorItem.Type.BOOTS, new Item.Settings()));
 
     //endregion
 

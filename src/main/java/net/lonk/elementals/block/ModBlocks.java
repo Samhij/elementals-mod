@@ -8,13 +8,14 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 public class ModBlocks {
     //region Ruby
 
     public static final Block RUBY_ORE = registerBlock("ruby_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), AbstractBlock.Settings.copy(Blocks.NETHER_GOLD_ORE)));
+            new ExperienceDroppingBlock(AbstractBlock.Settings.copy(Blocks.NETHER_GOLD_ORE), UniformIntProvider.create(2, 5)));
 
     public static final Block RUBY_BLOCK = registerBlock("ruby_block",
             new Block(AbstractBlock.Settings.copy(Blocks.EMERALD_BLOCK)));
@@ -24,7 +25,7 @@ public class ModBlocks {
     //region Sapphire
 
     public static final Block SAPPHIRE_ORE = registerBlock("sapphire_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).strength(3f).slipperiness(0.98f).requiresTool()));
+            new ExperienceDroppingBlock(AbstractBlock.Settings.create().sounds(BlockSoundGroup.GLASS).strength(3f).slipperiness(0.98f).requiresTool(), UniformIntProvider.create(2, 5)));
 
     public static final Block SAPPHIRE_BLOCK = registerBlock("sapphire_block",
             new Block(AbstractBlock.Settings.copy(Blocks.EMERALD_BLOCK)));
@@ -34,7 +35,7 @@ public class ModBlocks {
     //region Adamantine
 
     public static final Block ADAMANT_ORE = registerBlock("adamant_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), AbstractBlock.Settings.copy(Blocks.DEEPSLATE_DIAMOND_ORE)));
+            new ExperienceDroppingBlock(AbstractBlock.Settings.copy(Blocks.DEEPSLATE_DIAMOND_ORE), UniformIntProvider.create(2, 5)));
 
     public static final Block ADAMANTINE_BLOCK = registerBlock("adamantine_block",
             new Block(AbstractBlock.Settings.copy(Blocks.DIAMOND_BLOCK)));
@@ -44,7 +45,7 @@ public class ModBlocks {
     //region Aerolite
 
     public static final Block AEROLITE_ORE = registerBlock("aerolite_ore",
-            new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW).strength(5.5f, 20f).requiresTool()));
+            new ExperienceDroppingBlock(AbstractBlock.Settings.create().mapColor(MapColor.PALE_YELLOW).strength(5.5f, 20f).requiresTool(), UniformIntProvider.create(2, 5)));
 
     public static final Block AEROLITE_BLOCK = registerBlock("aerolite_block",
             new Block(AbstractBlock.Settings.copy(Blocks.NETHERITE_BLOCK)));

@@ -2,21 +2,15 @@ package net.lonk.elementals.event;
 
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.lonk.elementals.ElementalsMod;
 import net.lonk.elementals.ElementalsModClient;
 import net.lonk.elementals.item.ModItems;
-import net.minecraft.component.DataComponentTypes;
-import net.minecraft.component.type.ItemEnchantmentsComponent;
-import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
@@ -132,25 +126,6 @@ public class ModEvents {
         PlayerInventory inventory = player.getInventory();
         World level = player.getWorld();
 
-        // region Enchantment Registry Lookups
-
-        var enchantments = player.getWorld().getRegistryManager().get(RegistryKeys.ENCHANTMENT);
-        RegistryEntry<Enchantment> sharpness = enchantments.getEntry(net.minecraft.enchantment.Enchantments.SHARPNESS).orElseThrow();
-        RegistryEntry<Enchantment> fireAspect = enchantments.getEntry(net.minecraft.enchantment.Enchantments.FIRE_ASPECT).orElseThrow();
-        RegistryEntry<Enchantment> unbreaking = enchantments.getEntry(net.minecraft.enchantment.Enchantments.UNBREAKING).orElseThrow();
-        RegistryEntry<Enchantment> efficiency = enchantments.getEntry(net.minecraft.enchantment.Enchantments.EFFICIENCY).orElseThrow();
-        RegistryEntry<Enchantment> fortune = enchantments.getEntry(net.minecraft.enchantment.Enchantments.FORTUNE).orElseThrow();
-        RegistryEntry<Enchantment> aquaAffinity = enchantments.getEntry(net.minecraft.enchantment.Enchantments.AQUA_AFFINITY).orElseThrow();
-        RegistryEntry<Enchantment> depthStrider = enchantments.getEntry(net.minecraft.enchantment.Enchantments.DEPTH_STRIDER).orElseThrow();
-        RegistryEntry<Enchantment> protection = enchantments.getEntry(net.minecraft.enchantment.Enchantments.PROTECTION).orElseThrow();
-        RegistryEntry<Enchantment> soulSpeed = enchantments.getEntry(net.minecraft.enchantment.Enchantments.SOUL_SPEED).orElseThrow();
-        RegistryEntry<Enchantment> featherFalling = enchantments.getEntry(net.minecraft.enchantment.Enchantments.FEATHER_FALLING).orElseThrow();
-        RegistryEntry<Enchantment> riptide = enchantments.getEntry(net.minecraft.enchantment.Enchantments.RIPTIDE).orElseThrow();
-        RegistryEntry<Enchantment> mending = enchantments.getEntry(net.minecraft.enchantment.Enchantments.MENDING).orElseThrow();
-        RegistryEntry<Enchantment> knockback = enchantments.getEntry(net.minecraft.enchantment.Enchantments.KNOCKBACK).orElseThrow();
-
-        // endregion
-
         // region End Dimension Logic
 
         if (level.getRegistryKey() == World.END) {
@@ -158,18 +133,18 @@ public class ModEvents {
                 if (stack.isOf(ModItems.ETHEREAL_SWORD) || stack.isOf(ModItems.ETHEREAL_AXE)
                         || stack.isOf(ModItems.ETHEREAL_SHOVEL) || stack.isOf(ModItems.ETHEREAL_PICKAXE)
                         || stack.isOf(ModItems.ETHEREAL_HOE)) {
-                    stack.addEnchantment(unbreaking, 3);
-                    stack.addEnchantment(mending, 1);
+                    stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                    stack.addEnchantment(Enchantments.MENDING, 1);
                 }
 
 
                 if (stack.isOf(ModItems.ETHEREAL_SWORD)) {
-                    stack.addEnchantment(sharpness, 5);
-                    stack.addEnchantment(knockback, 2);
+                    stack.addEnchantment(Enchantments.SHARPNESS, 5);
+                    stack.addEnchantment(Enchantments.KNOCKBACK, 2);
                 }
                 if (stack.isOf(ModItems.ETHEREAL_PICKAXE)) {
-                    stack.addEnchantment(efficiency, 5);
-                    stack.addEnchantment(fortune, 3);
+                    stack.addEnchantment(Enchantments.EFFICIENCY, 5);
+                    stack.addEnchantment(Enchantments.FORTUNE, 3);
                 }
             }
 
@@ -182,25 +157,25 @@ public class ModEvents {
                 ItemStack boots = player.getInventory().getArmorStack(0);
 
                 if (helmet.getItem() == ModItems.ETHEREAL_HELMET) {
-                    helmet.addEnchantment(protection, 4);
-                    helmet.addEnchantment(unbreaking, 3);
-                    helmet.addEnchantment(mending, 1);
+                    helmet.addEnchantment(Enchantments.PROTECTION, 4);
+                    helmet.addEnchantment(Enchantments.UNBREAKING, 3);
+                    helmet.addEnchantment(Enchantments.MENDING, 1);
                 }
                 if (chestplate.getItem() == ModItems.ETHEREAL_CHESTPLATE) {
-                    chestplate.addEnchantment(protection, 4);
-                    chestplate.addEnchantment(unbreaking, 3);
-                    chestplate.addEnchantment(mending, 1);
+                    chestplate.addEnchantment(Enchantments.PROTECTION, 4);
+                    chestplate.addEnchantment(Enchantments.UNBREAKING, 3);
+                    chestplate.addEnchantment(Enchantments.MENDING, 1);
                 }
                 if (leggings.getItem() == ModItems.ETHEREAL_LEGGINGS) {
-                    leggings.addEnchantment(protection, 4);
-                    leggings.addEnchantment(unbreaking, 3);
-                    leggings.addEnchantment(mending, 1);
+                    leggings.addEnchantment(Enchantments.PROTECTION, 4);
+                    leggings.addEnchantment(Enchantments.UNBREAKING, 3);
+                    leggings.addEnchantment(Enchantments.MENDING, 1);
                 }
                 if (boots.getItem() == ModItems.ETHEREAL_BOOTS) {
-                    boots.addEnchantment(protection, 4);
-                    boots.addEnchantment(unbreaking, 3);
-                    boots.addEnchantment(mending, 1);
-                    boots.addEnchantment(featherFalling, 100);
+                    boots.addEnchantment(Enchantments.PROTECTION, 4);
+                    boots.addEnchantment(Enchantments.UNBREAKING, 3);
+                    boots.addEnchantment(Enchantments.MENDING, 1);
+                    boots.addEnchantment(Enchantments.FEATHER_FALLING, 100);
                 }
             }
         } else {
@@ -211,7 +186,7 @@ public class ModEvents {
 
             if (isWearingFullEtherealArmor(player)) {
                 for (ItemStack stack : inventory.armor) {
-                    if (stack.hasEnchantments()) stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                    if (stack.hasEnchantments()) stack.getEnchantments().clear();
                 }
             }
 
@@ -220,7 +195,7 @@ public class ModEvents {
                         || stack.isOf(ModItems.ETHEREAL_SHOVEL) || stack.isOf(ModItems.ETHEREAL_PICKAXE)
                         || stack.isOf(ModItems.ETHEREAL_HOE)) {
                     if (stack.hasEnchantments()) {
-                        stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                        stack.getEnchantments().clear();
                     }
                 }
             }
@@ -234,16 +209,16 @@ public class ModEvents {
             for (ItemStack stack : inventory.main) {
                 if (stack.isOf(ModItems.IGNITED_RUBY_SWORD) || stack.isOf(ModItems.IGNITED_RUBY_PICKAXE)
                         || stack.isOf(ModItems.IGNITED_RUBY_AXE) || stack.isOf(ModItems.IGNITED_RUBY_SHOVEL)) {
-                    stack.addEnchantment(unbreaking, 3);
-                    stack.addEnchantment(mending, 1);
-                    stack.addEnchantment(fireAspect, 2);
+                    stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                    stack.addEnchantment(Enchantments.MENDING, 1);
+                    stack.addEnchantment(Enchantments.FIRE_ASPECT, 2);
                 }
                 if (stack.isOf(ModItems.IGNITED_RUBY_PICKAXE)) {
-                    stack.addEnchantment(efficiency, 5);
-                    stack.addEnchantment(fortune, 3);
+                    stack.addEnchantment(Enchantments.EFFICIENCY, 5);
+                    stack.addEnchantment(Enchantments.FORTUNE, 3);
                 }
                 if (stack.isOf(ModItems.IGNITED_RUBY_SWORD)) {
-                    stack.addEnchantment(sharpness, 5);
+                    stack.addEnchantment(Enchantments.SHARPNESS, 5);
                 }
             }
 
@@ -252,25 +227,25 @@ public class ModEvents {
 
                 for (ItemStack stack : inventory.armor) {
                     if (stack.getItem() == ModItems.IGNITED_RUBY_HELMET) {
-                        stack.addEnchantment(protection, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
+                        stack.addEnchantment(Enchantments.PROTECTION, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
                     }
                     if (stack.getItem() == ModItems.IGNITED_RUBY_CHESTPLATE) {
-                        stack.addEnchantment(protection, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
+                        stack.addEnchantment(Enchantments.PROTECTION, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
                     }
                     if (stack.getItem() == ModItems.IGNITED_RUBY_LEGGINGS) {
-                        stack.addEnchantment(protection, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
+                        stack.addEnchantment(Enchantments.PROTECTION, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
                     }
                     if (stack.getItem() == ModItems.IGNITED_RUBY_BOOTS) {
-                        stack.addEnchantment(protection, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
-                        stack.addEnchantment(soulSpeed, 3);
+                        stack.addEnchantment(Enchantments.PROTECTION, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
+                        stack.addEnchantment(Enchantments.SOUL_SPEED, 3);
                     }
                 }
             }
@@ -289,14 +264,14 @@ public class ModEvents {
                         || stack.isOf(ModItems.IGNITED_RUBY_AXE) || stack.isOf(ModItems.IGNITED_RUBY_SHOVEL)
                         || stack.isOf(ModItems.IGNITED_RUBY_HELMET) || stack.isOf(ModItems.IGNITED_RUBY_CHESTPLATE)
                         || stack.isOf(ModItems.IGNITED_RUBY_LEGGINGS) || stack.isOf(ModItems.IGNITED_RUBY_BOOTS) && stack.hasEnchantments()) {
-                    stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                    stack.getEnchantments().clear();
                 }
             }
 
             for (ItemStack stack : inventory.armor) {
                 if ((stack.isOf(ModItems.IGNITED_RUBY_HELMET) || stack.isOf(ModItems.IGNITED_RUBY_CHESTPLATE)
                         || stack.isOf(ModItems.IGNITED_RUBY_LEGGINGS) || stack.isOf(ModItems.IGNITED_RUBY_BOOTS)) && stack.hasEnchantments()) {
-                    stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                    stack.getEnchantments().clear();
                 }
             }
         }
@@ -309,15 +284,15 @@ public class ModEvents {
             for (ItemStack stack : inventory.main) {
                 if (stack.isOf(ModItems.DRIPPING_WET_SWORD) || stack.isOf(ModItems.DRIPPING_WET_PICKAXE)
                         || stack.isOf(ModItems.DRIPPING_WET_AXE) || stack.isOf(ModItems.DRIPPING_WET_SHOVEL)) {
-                    stack.addEnchantment(mending, 1);
-                    stack.addEnchantment(unbreaking, 3);
+                    stack.addEnchantment(Enchantments.MENDING, 1);
+                    stack.addEnchantment(Enchantments.UNBREAKING, 3);
                 }
                 if (stack.isOf(ModItems.DRIPPING_WET_PICKAXE)) {
-                    stack.addEnchantment(efficiency, 5);
-                    stack.addEnchantment(fortune, 3);
+                    stack.addEnchantment(Enchantments.EFFICIENCY, 5);
+                    stack.addEnchantment(Enchantments.FORTUNE, 3);
                 }
                 if (stack.isOf(ModItems.DRIPPING_WET_SWORD)) {
-                    stack.addEnchantment(sharpness, 4);
+                    stack.addEnchantment(Enchantments.SHARPNESS, 4);
                 }
             }
 
@@ -327,44 +302,44 @@ public class ModEvents {
 
                 for (ItemStack stack : inventory.main) {
                     if (stack.isOf(Items.TRIDENT)) {
-                        stack.addEnchantment(riptide, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
+                        stack.addEnchantment(Enchantments.RIPTIDE, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
                     }
                 }
 
                 for (ItemStack stack : inventory.armor) {
                     if (stack.getItem() == ModItems.DRIPPING_WET_HELMET) {
-                        stack.addEnchantment(aquaAffinity, 1);
-                        stack.addEnchantment(protection, 2);
-                        stack.addEnchantment(unbreaking, 3);
+                        stack.addEnchantment(Enchantments.AQUA_AFFINITY, 1);
+                        stack.addEnchantment(Enchantments.PROTECTION, 2);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
                     }
                     if (stack.getItem() == ModItems.DRIPPING_WET_CHESTPLATE) {
-                        stack.addEnchantment(protection, 2);
-                        stack.addEnchantment(unbreaking, 3);
+                        stack.addEnchantment(Enchantments.PROTECTION, 2);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
                     }
                     if (stack.getItem() == ModItems.DRIPPING_WET_LEGGINGS) {
-                        stack.addEnchantment(protection, 2);
-                        stack.addEnchantment(unbreaking, 3);
+                        stack.addEnchantment(Enchantments.PROTECTION, 2);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
                     }
                     if (stack.getItem() == ModItems.DRIPPING_WET_BOOTS) {
-                        stack.addEnchantment(protection, 2);
-                        stack.addEnchantment(featherFalling, 3);
-                        stack.addEnchantment(depthStrider, 3);
-                        stack.addEnchantment(unbreaking, 3);
+                        stack.addEnchantment(Enchantments.PROTECTION, 2);
+                        stack.addEnchantment(Enchantments.FEATHER_FALLING, 3);
+                        stack.addEnchantment(Enchantments.DEPTH_STRIDER, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
                     }
                 }
             } else {
                 for (ItemStack stack : inventory.armor) {
                     if ((stack.isOf(ModItems.DRIPPING_WET_HELMET) || stack.isOf(ModItems.DRIPPING_WET_CHESTPLATE)
                             || stack.isOf(ModItems.DRIPPING_WET_LEGGINGS) || stack.isOf(ModItems.DRIPPING_WET_BOOTS)) && stack.hasEnchantments()) {
-                        stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                        stack.getEnchantments().clear();
                     }
                 }
                 for (ItemStack stack : inventory.main) {
                     if (stack.isOf(Items.TRIDENT) || stack.isOf(ModItems.DRIPPING_WET_HELMET) || stack.isOf(ModItems.DRIPPING_WET_CHESTPLATE)
                             || stack.isOf(ModItems.DRIPPING_WET_LEGGINGS) || stack.isOf(ModItems.DRIPPING_WET_BOOTS) && stack.hasEnchantments()) {
-                        stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                        stack.getEnchantments().clear();
                     }
                 }
             }
@@ -377,7 +352,7 @@ public class ModEvents {
             for (ItemStack stack : inventory.main) {
                 if (stack.isOf(ModItems.DRIPPING_WET_SWORD) || stack.isOf(ModItems.DRIPPING_WET_PICKAXE)
                         || stack.isOf(ModItems.DRIPPING_WET_AXE) || stack.isOf(ModItems.DRIPPING_WET_SHOVEL) && stack.hasEnchantments()) {
-                    stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                    stack.getEnchantments().clear();
                 }
             }
             if (isWearingFullDrippingWetArmor(player)) {
@@ -385,12 +360,12 @@ public class ModEvents {
                 player.removeStatusEffect(StatusEffects.WATER_BREATHING);
 
                 for (ItemStack stack : inventory.armor) {
-                    stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                    stack.getEnchantments().clear();
                 }
 
                 for (ItemStack stack : inventory.main) {
                     if (stack.isOf(Items.TRIDENT)) {
-                        stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                        stack.getEnchantments().clear();
                     }
                 }
             }
@@ -404,15 +379,15 @@ public class ModEvents {
             for (ItemStack stack : inventory.main) {
                 if (stack.isOf(ModItems.FORTIFIED_ADAMANTINE_SWORD) || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_PICKAXE)
                         || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_AXE) || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_SHOVEL)) {
-                    stack.addEnchantment(mending, 1);
-                    stack.addEnchantment(unbreaking, 3);
+                    stack.addEnchantment(Enchantments.MENDING, 1);
+                    stack.addEnchantment(Enchantments.UNBREAKING, 3);
                 }
                 if (stack.isOf(ModItems.FORTIFIED_ADAMANTINE_PICKAXE)) {
-                    stack.addEnchantment(efficiency, 5);
-                    stack.addEnchantment(fortune, 3);
+                    stack.addEnchantment(Enchantments.EFFICIENCY, 5);
+                    stack.addEnchantment(Enchantments.FORTUNE, 3);
                 }
                 if (stack.isOf(ModItems.FORTIFIED_ADAMANTINE_SWORD)) {
-                    stack.addEnchantment(sharpness, 4);
+                    stack.addEnchantment(Enchantments.SHARPNESS, 4);
                 }
             }
 
@@ -421,25 +396,25 @@ public class ModEvents {
 
                 for (ItemStack stack : inventory.armor) {
                     if (stack.getItem() == ModItems.FORTIFIED_ADAMANTINE_HELMET) {
-                        stack.addEnchantment(protection, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
+                        stack.addEnchantment(Enchantments.PROTECTION, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
                     }
                     if (stack.getItem() == ModItems.FORTIFIED_ADAMANTINE_CHESTPLATE) {
-                        stack.addEnchantment(protection, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
+                        stack.addEnchantment(Enchantments.PROTECTION, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
                     }
                     if (stack.getItem() == ModItems.FORTIFIED_ADAMANTINE_LEGGINGS) {
-                        stack.addEnchantment(protection, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
+                        stack.addEnchantment(Enchantments.PROTECTION, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
                     }
                     if (stack.getItem() == ModItems.FORTIFIED_ADAMANTINE_BOOTS) {
-                        stack.addEnchantment(protection, 3);
-                        stack.addEnchantment(featherFalling, 3);
-                        stack.addEnchantment(unbreaking, 3);
-                        stack.addEnchantment(mending, 1);
+                        stack.addEnchantment(Enchantments.PROTECTION, 3);
+                        stack.addEnchantment(Enchantments.FEATHER_FALLING, 3);
+                        stack.addEnchantment(Enchantments.UNBREAKING, 3);
+                        stack.addEnchantment(Enchantments.MENDING, 1);
                     }
                 }
             }
@@ -459,7 +434,7 @@ public class ModEvents {
                         || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_AXE) || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_SHOVEL)
                         || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_HELMET) || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_CHESTPLATE)
                         || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_LEGGINGS) || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_BOOTS) && stack.hasEnchantments()) {
-                    stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                    stack.getEnchantments().clear();
                 }
             }
             for (ItemStack stack : inventory.armor) {
@@ -467,7 +442,7 @@ public class ModEvents {
                         || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_CHESTPLATE)
                         || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_LEGGINGS)
                         || stack.isOf(ModItems.FORTIFIED_ADAMANTINE_BOOTS))) {
-                    stack.set(DataComponentTypes.ENCHANTMENTS, ItemEnchantmentsComponent.DEFAULT);
+                    stack.getEnchantments().clear();
                 }
             }
         }

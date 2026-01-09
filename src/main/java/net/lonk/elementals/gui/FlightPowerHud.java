@@ -5,7 +5,6 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.lonk.elementals.event.ModEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.render.RenderTickCounter;
 
 public class FlightPowerHud implements ClientModInitializer {
 
@@ -15,7 +14,7 @@ public class FlightPowerHud implements ClientModInitializer {
         HudRenderCallback.EVENT.register(FlightPowerHud::renderFlightPower);
     }
 
-    private static void renderFlightPower(DrawContext context, RenderTickCounter tickCounter) {
+    private static void renderFlightPower(DrawContext context, float tickDelta) {
         MinecraftClient client = MinecraftClient.getInstance();
 
         // Only render if player exists and is wearing ethereal armor

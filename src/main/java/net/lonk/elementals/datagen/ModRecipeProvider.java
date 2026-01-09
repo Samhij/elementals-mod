@@ -5,22 +5,21 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.lonk.elementals.block.ModBlocks;
 import net.lonk.elementals.item.ModItems;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.RecipeExporter;
+import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.*;
 import net.minecraft.recipe.book.RecipeCategory;
-import net.minecraft.registry.RegistryWrapper;
 import java.util.List;
-import java.util.concurrent.CompletableFuture;
+import java.util.function.Consumer;
 
 public class ModRecipeProvider extends FabricRecipeProvider {
-    public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
-        super(output, registriesFuture);
+    public ModRecipeProvider(FabricDataOutput output) {
+        super(output);
     }
 
     @Override
-    public void generate(RecipeExporter exporter) {
+    public void generate(Consumer<RecipeJsonProvider> exporter) {
         //region Smelting & Blasting
 
         offerSmelting(exporter, List.of(ModBlocks.RUBY_ORE), RecipeCategory.MISC, ModItems.RUBY, 0.25f, 200, "ruby");
@@ -274,7 +273,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     //region Tool Helper Methods
 
-    private static void offerSwordRecipe(RecipeExporter exporter, Item swordItem, ItemConvertible ingredient) {
+    private static void offerSwordRecipe(Consumer<RecipeJsonProvider> exporter, Item swordItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, swordItem)
                 .pattern(" R ")
                 .pattern(" R ")
@@ -285,7 +284,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
     }
 
-    private static void offerPickaxeRecipe(RecipeExporter exporter, Item pickaxeItem, ItemConvertible ingredient) {
+    private static void offerPickaxeRecipe(Consumer<RecipeJsonProvider> exporter, Item pickaxeItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, pickaxeItem)
                 .pattern("RRR")
                 .pattern(" S ")
@@ -296,7 +295,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
     }
 
-    private static void offerShovelRecipe(RecipeExporter exporter, Item shovelItem, ItemConvertible ingredient) {
+    private static void offerShovelRecipe(Consumer<RecipeJsonProvider> exporter, Item shovelItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, shovelItem)
                 .pattern(" R ")
                 .pattern(" S ")
@@ -307,7 +306,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
     }
 
-    private static void offerAxeRecipe(RecipeExporter exporter, Item axeItem, ItemConvertible ingredient) {
+    private static void offerAxeRecipe(Consumer<RecipeJsonProvider> exporter, Item axeItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, axeItem)
                 .pattern("RR ")
                 .pattern("RS ")
@@ -318,7 +317,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
     }
 
-    private static void offerHoeRecipe(RecipeExporter exporter, Item hoeItem, ItemConvertible ingredient) {
+    private static void offerHoeRecipe(Consumer<RecipeJsonProvider> exporter, Item hoeItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.TOOLS, hoeItem)
                 .pattern("RR ")
                 .pattern(" S ")
@@ -333,7 +332,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     //region Armor Helper Methods
 
-    private static void offerHelmetRecipe(RecipeExporter exporter, Item helmetItem, ItemConvertible ingredient) {
+    private static void offerHelmetRecipe(Consumer<RecipeJsonProvider> exporter, Item helmetItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, helmetItem)
                 .pattern("RRR")
                 .pattern("R R")
@@ -342,7 +341,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
     }
 
-    private static void offerChestplateRecipe(RecipeExporter exporter, Item chestplateItem, ItemConvertible ingredient) {
+    private static void offerChestplateRecipe(Consumer<RecipeJsonProvider> exporter, Item chestplateItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, chestplateItem)
                 .pattern("R R")
                 .pattern("RRR")
@@ -352,7 +351,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
     }
 
-    private static void offerLeggingsRecipe(RecipeExporter exporter, Item leggingsItem, ItemConvertible ingredient) {
+    private static void offerLeggingsRecipe(Consumer<RecipeJsonProvider> exporter, Item leggingsItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, leggingsItem)
                 .pattern("RRR")
                 .pattern("R R")
@@ -362,7 +361,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter);
     }
 
-    private static void offerBootsRecipe(RecipeExporter exporter, Item bootsItem, ItemConvertible ingredient) {
+    private static void offerBootsRecipe(Consumer<RecipeJsonProvider> exporter, Item bootsItem, ItemConvertible ingredient) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.COMBAT, bootsItem)
                 .pattern("R R")
                 .pattern("R R")
@@ -370,6 +369,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ingredient), conditionsFromItem(ingredient))
                 .offerTo(exporter);
     }
+
 
     //endregion
 }
