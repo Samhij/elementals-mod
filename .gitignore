@@ -1,6 +1,64 @@
-# Project exclude paths
-/.gradle/
-/build/
-/build/classes/java/main/
-/run/
-/.idea/
+# Gradle
+.gradle/
+build/
+out/
+bin/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VSCode
+.vscode/
+
+# Minecraft run directories
+run/
+runs/
+minecraft/
+
+# Fabric/Forge specific
+remappedSrc/
+.mixin.out/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Linux
+*~
+
+# Logs
+logs/
+*.log
+
+# Crash reports
+crash-reports/
+
+# Local Gradle properties (may contain sensitive info)
+gradle-local.properties
+
+# Mod JAR outputs (keep build/ ignored, but some devs like to track releases)
+*.jar
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Test worlds/saves (if you're testing in-dev)
+saves/
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
